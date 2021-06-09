@@ -74,93 +74,92 @@
         <p>Using infrared thermal and visual cameras it is possible to provide non-invasive verifiable
             record keeping of the cooling process.
         </p>
-
         <div class="text-center">
             <figure class="figure">
-                <div class="column">
                     <div class="image-spliter">
                         <div class="mover"></div>
                         <img class="img-left rounded float-start" src="images/rgb_labelled.png">
                         <img class="img-right rounded float-start" src="images/thermal.png">
                     </div>
-                </div>
-            <figcaption class="figure-caption">Fusion of an RGB and IR image allows for precise temperature
-                monitoring.
-            </figcaption>
+                    <div class="image-spliter">
+                        <img src="images/colourbar.png">
+                    </div>
+                    <figcaption class="figure-caption">Fusion of an RGB and IR image allows for precise temperature
+                    monitoring.
+                </figcaption>
             </figure>
         </div>
-    </div>
 
-    <div class="column">
-        <div class="image-spliter">
-            <img src="images/colourbar.png">
+
+        <div class="column">
+            <div class="image-spliter">
+                <img src="images/colourbar.png">
+            </div>
         </div>
+        <p>The prototype runs Tensorflow image localization models and a homographic blending of the IR and RGB images
+            to allow for real-time temperature monitoring and logging.</p>
+        <p>Using AWS Greengrass to deploy the models and run inference on the device minimises the need for internet
+            connection stability and the logged data remains on the device until
+            it the AWS connection is established.
+        </p>
+        <p class="h4">Better Monitoring</p>
+        <p>
+            Real-time measurement offers the ability for better process monitoring and control.
+        </p>
+        <p class="h5">More Control</p>
+        <p>
+            It is possible to adjust the cooling fan speed throughout the cooling to maximise cooling rates at different
+            temperature,
+            terminate cooling early based on the temperature set point (or extend where required).
+        </p>
+        <p class="h5">Fault Detection</p>
+        <p>
+            If there is a fault with a time based process (power cut or other process interruption) there is no insight
+            into the current state of the product.
+            To recover from this interruption may involve restart of the timed process which will lead to the cooling
+            unit being unavailable
+            for additional product for longer than necessary.</p>
+        <p>
 
-    </div>
-    <p>The prototype runs Tensorflow image localization models and a homographic blending of the IR and RGB images
-        to allow for real-time temperature monitoring and logging.</p>
-    <p>Using AWS Greengrass to deploy the models and run inference on the device minimises the need for internet
-        connection stability and the logged data remains on the device until
-        it the AWS connection is established.
-    </p>
-    <p class="h4">Better Monitoring</p>
-    <p>
-        Real-time measurement offers the ability for better process monitoring and control.
-    </p>
-    <p class="h5">More Control</p>
-    <p>
-        It is possible to adjust the cooling fan speed throughout the cooling to maximise cooling rates at different
-        temperature,
-        terminate cooling early based on the temperature set point (or extend where required).
-    </p>
-    <p class="h5">Fault Detection</p>
-    <p>
-        If there is a fault with a time based process (power cut or other process interruption) there is no insight
-        into the current state of the product.
-        To recover from this interruption may involve restart of the timed process which will lead to the cooling
-        unit being unavailable
-        for additional product for longer than necessary.</p>
-    <p>
+            With real-time monitoring and the termination of cooling based on actual temperature these interuptions are
+            effectively eliminated. </p>
+        <p class="h5">Less Energy</p>
+        <p>
+            With improved monitoring it may be possible to reduce the average overall time spent in the cooling process.
+            A running fan on an individual cooling unit typically draws about 4 kW electical load which is transformed
+            effectively into an
+            equivalent 4 kW heat load to the cool store.
+        </p>
+        <p>
+            If the fans operation time is reduced this eliminates unnecessary heat addition to the cool store.
 
-        With real-time monitoring and the termination of cooling based on actual temperature these interuptions are
-        effectively eliminated. </p>
-    <p class="h5">Less Energy</p>
-    <p>
-        With improved monitoring it may be possible to reduce the average overall time spent in the cooling process.
-        A running fan on an individual cooling unit typically draws about 4 kW electical load which is transformed
-        effectively into an
-        equivalent 4 kW heat load to the cool store.
-    </p>
-    <p>
-        If the fans operation time is reduced this eliminates unnecessary heat addition to the cool store.
-
-    </p>
-    <p>
-        This potential energy saving is not insignificant. With 30 operating cooling cells running 1 hour longer
-        than necessary there will be
-        an additional 120 kW cooling load applied to the cool store.
-    </p>
-    <p>
-        In addition, reducing time in the cells from 5 to 4 hours would increase production capacity (availability)
-        of the cooling unit by 25%.
-    </p>
-    </p>
-    <p class="h5">Better Data</p>
-    <p>The following are copies of data from a trial cooling run published in real time to the internet.
-        These would be available in real time for production control and alarms.
-        The records can be used to improve quality control and archived for improved mandatory quality control
-        records.
-    </p>
-    <p class="h5">Real-Time Data Access and Backup</p>
-    <p>
-        The following data was published in real time and recorded in a remote AWS timeseries database.</p>
-    <p>
-        This data is available in real time for production control and alarms.
-    </p>
-    <p>
-        The records can be used to improve quality control and provides an archive for improved mandatory quality
-        control records.
-    </p>
+        </p>
+        <p>
+            This potential energy saving is not insignificant. With 30 operating cooling cells running 1 hour longer
+            than necessary there will be
+            an additional 120 kW cooling load applied to the cool store.
+        </p>
+        <p>
+            In addition, reducing time in the cells from 5 to 4 hours would increase production capacity (availability)
+            of the cooling unit by 25%.
+        </p>
+        </p>
+        <p class="h5">Better Data</p>
+        <p>The following are copies of data from a trial cooling run published in real time to the internet.
+            These would be available in real time for production control and alarms.
+            The records can be used to improve quality control and archived for improved mandatory quality control
+            records.
+        </p>
+        <p class="h5">Real-Time Data Access and Backup</p>
+        <p>
+            The following data was published in real time and recorded in a remote AWS timeseries database.</p>
+        <p>
+            This data is available in real time for production control and alarms.
+        </p>
+        <p>
+            The records can be used to improve quality control and provides an archive for improved mandatory quality
+            control records.
+        </p>
 
 
 
