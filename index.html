@@ -1,28 +1,179 @@
+<!doctype html>
+<html lang="en">
 
-<link rel="stylesheet" type="text/css" href="css/image-comparison-slider.css">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/image-comparison-slider.css">
+    <title>Machine Learning for Dairy Cooling</title>
+</head>
 
-<div class="container">
-    <div class="item">
-        <div class="column">
-            <div class="image-spliter">
-                <div class="mover"></div>
-                <img class="img-left" src="rgb_labelled.png" >
-                <img class="img-right" src="thermal.png" >
-            </div>    
-        
-        </div>   
-        <div class="column">
-            <div class="image-spliter">
-                <img src="colourbar.png" > 
-            </div>
-                      
+<body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">clive@decarbonise.co.nz</span>
+        </div>
+    </nav>
+    <div class="container" max-width=80%>
+        <p class="h3"></p>
+        <p class="h3">IR Cameras and Computer Vision to Manage Dairy Product Cooling</p>
+        <p class="h5">A Machine Learning driven approach as an alternative to current practice</p>
+        <p>Having worked with the process of cooling hot dairy products it is apparent that Machine Learning can offer
+            better monitoring options than are available.
+            Once a better measurement mechanism is available there are opportunities to improve the efficiency,
+            utilisation and mandated recording of the cooling process.</p>
+        <p class="h5">Cooling of Dairy Products</p>
+        <p>Cooked dairy products such as custard require cooling and management of the cooling process
+            is essential to maintaining food safety.
+            As the hot product cool they pass through a warm temperature range that is optimum for the growth
+            of harmful bacteria. </p>
+        <p><mark>In 30°C milk products it is possible for a <b>bacillus cereus</b> population to double in size in 20
+                minutes. </mark>
+            Cooling the product quickly is the most effective means to
+            ensures that the bacteria cannot contaminate the product.</p>
+        <div class="text-center">
+            <figure class="figure">
+                <img src="images/640px-Bacillus_cereus_SEM-cr.jpg" class="figure-img img-fluid rounded"
+                    alt="Bacillus cereus">
+                <figcaption class="figure-caption"><b>Bacillus cereus</b> is a common bacteria that can produce
+                    enterotoxins, which are highly resistant
+                    to heat and acids (pH levels between 2 and 11) and ingestion leads to diarrhea and vomiting.
+                </figcaption>
+            </figure>
+        </div>
+        <p class="h5">Regulations</p>
+        <p>Many food safety regulations impose controls to eliminate the risk of bacterial growth during this
+            cooling phase.
+            These regulations are generally empirically based and designed to be practical and simple to
+            follow. Australasian food standards for example, typically <mark>“require food to be cooled from 60°C to
+                21°C
+                in a maximum of two hours and from 21°C to 5°C within a further maximum period of four hours.”</mark>
+        </p>
+        <p class="h5">Current Practice</p>
+        <p>For cooked dairy products that are packaged hot and then force cooled in a chilled environment
+            there are limited ways to monitor the actual product temperature.
+            Without adequate monitoring techniques an empirical coarse time based approach has typically been adopted
+            based
+            on historical testing to meet the safety standards requirements. </p>
+        <p>
+            Records keeping will typically involve recording the cool room temperature and time in forced cooling.
+            These records tend to be general data (such as a remote temperature reading) rather than specific
+            items or pallets. These records may be hand recorded and although there are alarms connected
+            to the cooling units they give almost no insight into the actual cooling rates or temperatures
+            of the individual product. </p>
+        <p>Potential issues arise if mechanical failures require a restart of
+            the cooling cycle or the room temperature deviates from the historical tests.
+        </p>
+        <p class="h5">IR Camera augmented with Computer Vision</p>
+        <p>Using infrared thermal and visual cameras it is possible to provide non-invasive verifiable
+            record keeping of the cooling process.
+        </p>
+
+        <div class="text-center">
+            <figure class="figure">
+                <div class="column">
+                    <div class="image-spliter">
+                        <div class="mover"></div>
+                        <img class="img-left rounded float-start" src="images/rgb_labelled.png">
+                        <img class="img-right rounded float-start" src="images/thermal.png">
+                    </div>
+                </div>
+            <figcaption class="figure-caption">Fusion of an RGB and IR image allows for precise temperature
+                monitoring.
+            </figcaption>
+            </figure>
         </div>
     </div>
-</div>
+
+    <div class="column">
+        <div class="image-spliter">
+            <img src="images/colourbar.png">
+        </div>
+
+    </div>
+    <p>The prototype runs Tensorflow image localization models and a homographic blending of the IR and RGB images
+        to allow for real-time temperature monitoring and logging.</p>
+    <p>Using AWS Greengrass to deploy the models and run inference on the device minimises the need for internet
+        connection stability and the logged data remains on the device until
+        it the AWS connection is established.
+    </p>
+    <p class="h4">Better Monitoring</p>
+    <p>
+        Real-time measurement offers the ability for better process monitoring and control.
+    </p>
+    <p class="h5">More Control</p>
+    <p>
+        It is possible to adjust the cooling fan speed throughout the cooling to maximise cooling rates at different
+        temperature,
+        terminate cooling early based on the temperature set point (or extend where required).
+    </p>
+    <p class="h5">Fault Detection</p>
+    <p>
+        If there is a fault with a time based process (power cut or other process interruption) there is no insight
+        into the current state of the product.
+        To recover from this interruption may involve restart of the timed process which will lead to the cooling
+        unit being unavailable
+        for additional product for longer than necessary.</p>
+    <p>
+
+        With real-time monitoring and the termination of cooling based on actual temperature these interuptions are
+        effectively eliminated. </p>
+    <p class="h5">Less Energy</p>
+    <p>
+        With improved monitoring it may be possible to reduce the average overall time spent in the cooling process.
+        A running fan on an individual cooling unit typically draws about 4 kW electical load which is transformed
+        effectively into an
+        equivalent 4 kW heat load to the cool store.
+    </p>
+    <p>
+        If the fans operation time is reduced this eliminates unnecessary heat addition to the cool store.
+
+    </p>
+    <p>
+        This potential energy saving is not insignificant. With 30 operating cooling cells running 1 hour longer
+        than necessary there will be
+        an additional 120 kW cooling load applied to the cool store.
+    </p>
+    <p>
+        In addition, reducing time in the cells from 5 to 4 hours would increase production capacity (availability)
+        of the cooling unit by 25%.
+    </p>
+    </p>
+    <p class="h5">Better Data</p>
+    <p>The following are copies of data from a trial cooling run published in real time to the internet.
+        These would be available in real time for production control and alarms.
+        The records can be used to improve quality control and archived for improved mandatory quality control
+        records.
+    </p>
+    <p class="h5">Real-Time Data Access and Backup</p>
+    <p>
+        The following data was published in real time and recorded in a remote AWS timeseries database.</p>
+    <p>
+        This data is available in real time for production control and alarms.
+    </p>
+    <p>
+        The records can be used to improve quality control and provides an archive for improved mandatory quality
+        control records.
+    </p>
 
 
 
+    </div>
 
-<script src="js/image-comparison-slider.min.js"></script>
 
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="js/image-comparison-slider.min.js"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

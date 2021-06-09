@@ -25,29 +25,17 @@ img {
     left:0;
   }
   
-  .img-cb{
-    position: absolute;
-    top: 0;
-    left:0;
-  }
+
   
   .mover {
     position:absolute;
-    width: 800px;
+    width: 300px;
     height: 100%;
     top: 0;
     left:0;
     z-index: 10;
   }
 
-  .colorbar {
-    position:relative;
-    width: 800px;
-    height: 100%;
-    top: 0;
-    left:0;
-    z-index: 10;
-  }
   .mover:before,
   .mover:after {
     position:absolute;
@@ -74,7 +62,7 @@ img {
 
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
-  float: middle;
+  float: left;
   width: 33.33%;
   padding: 5px;
 }
