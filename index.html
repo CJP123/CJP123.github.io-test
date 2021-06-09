@@ -70,32 +70,89 @@
         <p>Potential issues arise if mechanical failures require a restart of
             the cooling cycle or the room temperature deviates from the historical tests.
         </p>
-        <p class="h5">IR Camera augmented with Computer Vision</p>
+        <p class="h5">IR Image augmented with Computer Vision Product Localization</p>
         <p>Using infrared thermal and visual cameras it is possible to provide non-invasive verifiable
-            record keeping of the cooling process.
+            record keeping of the cooling process. The following RGB images are overlaid with the sliding window thermal image.
         </p>
-        <div class="text-center">
+        <div class="container">
+            <p class="h5">Identifying anomalies in cooling</p>
             <figure class="figure">
-                    <div class="image-spliter">
-                        <div class="mover"></div>
-                        <img class="img-left rounded float-start" src="images/rgb_labelled.png">
-                        <img class="img-right rounded float-start" src="images/thermal.png">
+                <div class="row">
+                    <div class="col">
+                        <div class="image-spliter">
+                            <div class="mover"></div>
+                            <img class="img-left rounded float-start" src="images/hotcold/rgb_labelled.png">
+                            <img class="img-right rounded float-start" src="images/hotcold/thermal.png">
+
+
+                        </div>
                     </div>
-                    <div class="image-spliter">
-                        <img src="images/colourbar.png">
+                    <div class="col">
+                        <div class="column">
+                            <div class="image-spliter">
+                                <img src="images/hotcold/colourbar.png">
+                            </div>
+                        </div>
                     </div>
-                    <figcaption class="figure-caption">Fusion of an RGB and IR image allows for precise temperature
-                    monitoring.
+
+                </div>
+                <figcaption class="figure-caption">IR image identifies the product on the left at 58°C while the other
+                     is 21°C suggesting a anomaly that could be detected and reported in real-time.
+                </figcaption>
+            </figure>
+            <p class="h5">Normal Cooling Example</p>
+            <figure class="figure">
+                <div class="row">
+                    <div class="col">
+                        <div class="image-spliter">
+                            <div class="mover"></div>
+                            <img class="img-left rounded float-start" src="images/twohot/rgb_labelled.png">
+                            <img class="img-right rounded float-start" src="images/twohot/thermal.png">
+
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="column">
+                            <div class="image-spliter">
+                                <img src="images/twohot/colourbar.png">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <figcaption class="figure-caption">The products are both within 1-2°C suggesting even cooling.
+                </figcaption>
+            </figure>
+            <p class="h5">Normal Cooling Example</p>
+            <figure class="figure">
+                <div class="row">
+                    <div class="col">
+                        <div class="image-spliter">
+                            <div class="mover"></div>
+                            <img class="img-left rounded float-start" src="images/rgb_labelled.png">
+                            <img class="img-right rounded float-start" src="images/thermal.png">
+
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="column">
+                            <div class="image-spliter">
+                                <img src="images/colourbar.png">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <figcaption class="figure-caption">The products are both at the background temperature of the room and read the same temperature.
                 </figcaption>
             </figure>
         </div>
 
 
-        <div class="column">
-            <div class="image-spliter">
-                <img src="images/colourbar.png">
-            </div>
-        </div>
+
+
         <p>The prototype runs Tensorflow image localization models and a homographic blending of the IR and RGB images
             to allow for real-time temperature monitoring and logging.</p>
         <p>Using AWS Greengrass to deploy the models and run inference on the device minimises the need for internet
